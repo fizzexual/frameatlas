@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "frameatlas"
+version = "0.1.0"
+description = "Every video frame, exact timestamps, and accountable sequential access for AI agents."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "FrameAtlas contributors"}]
+dependencies = ["av>=14", "Pillow>=10.4"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent", "Topic :: Multimedia :: Video", "Topic :: Scientific/Engineering :: Artificial Intelligence"]
+
+[project.urls]
+Repository = "https://github.com/fizzexual/frameatlas"
+Issues = "https://github.com/fizzexual/frameatlas/issues"
+
+[project.scripts]
+frameatlas = "frameatlas.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1.2"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/frameatlas"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["scale: 18,000-frame integration test"]
