@@ -33,7 +33,8 @@ def make_server(dataset: Dataset, port=8765):
                     self.send_error(403, "Loopback viewer requires same-origin access.")
                     return
                 parts = urlsplit(self.path)
-                query = parse_qs(parts.query, strict_parsing=True, max_num_fields=8)
+                # Python 3.10 strict parsing rejects an empty query string.
+                query = parse_qs(parts.query, strict_parsing=True, max_num_fields=8) if parts.query else {}
                 if any(len(values) != 1 for values in query.values()):
                     raise ValueError("Duplicate query parameters are not accepted.")
 
