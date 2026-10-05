@@ -1,4 +1,4 @@
-# FrameAtlas
+# FrameAtlas 🌱
 
 **Every video frame, accessible to AI agents and humans.**
 
@@ -6,6 +6,10 @@ FrameAtlas decodes a local video into a complete, indexed collection of native-r
 
 **300 seconds × exactly 60 FPS = 18,000 frames. All 18,000 remain addressable.**
 The decoder determines the actual count: 59.94 FPS and variable-frame-rate videos can have different counts. FrameAtlas never forces a video to 60 FPS, deduplicates repeated images, or samples one frame per second.
+
+## About
+
+FrameAtlas is a Python command-line tool and MCP server for people who want an AI agent (or a human reviewer) to look at every frame of a video instead of a sampled subset. It extracts frames locally with PyAV, records exact timestamps, serves them over MCP and a browser viewer, and tracks which frames a review session has actually seen. It is an early release (version 0.1.0), installable from this repository.
 
 ## Install
 
