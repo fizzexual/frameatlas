@@ -140,3 +140,5 @@ CI runs the normal suite on Linux, macOS and Windows, plus a dedicated 18,000-fr
 ## License
 
 [MIT](LICENSE). Video content remains subject to its own ownership and permissions.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to contribute, [SECURITY.md](SECURITY.md) to report a vulnerability, and [CHANGELOG.md](CHANGELOG.md) for release history.
